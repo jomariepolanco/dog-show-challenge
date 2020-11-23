@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const dogId = event.target.dataset.id 
         updateDogFetchPatch(dogObj, dogId)
+        dogsFetchGet()
     })
 
     const dogsFetchGet = () => {
@@ -36,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(dog)
         })
-        .then(resp => resp.json())
-        .then(updatedDog => dogsFetchGet())
+        // .then(resp => resp.json())
+        // .then(updatedDog => dogsFetchGet())
     }
     // const dogTr = document.querySelector(`tr[data-id='${id}']`)
     // dogTr.children[0].textContent = updatedDog.name 
